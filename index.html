@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <div class="app"></div>
+    <script>
+        const favouriteFood = ['burritos', 'coffee', 'ramen', 'pho', 'indian curry', 'thai curry'];
+        //sprea operator spreads array into elements.
+        // console.log(...favouriteFood);
+        const findFood = favouriteFood.includes('burritos');
+        // will return a true or false and is case sensitive
+        // console.log(findFood);
+
+        //replaces conventional for loop and allows you to modify one item
+        for(const item of favouriteFood){
+            // console.log(item);
+        }
+
+        const mappedFood = favouriteFood.map((item) => item);
+        // console.log(mappedFood);
+
+        const expenses = [20, 34, 56, 10, 12];
+        const total = expenses.reduce((first, last)=> first + last);
+        // console.log(total);
+
+        const budgies = [
+            {
+            'cheese': .50, 
+            'burrito': 12.00, 
+            'cabbage': 1.00, 
+            'sour cream': 3.00, 
+            'black beans': 2.00
+            }, 
+        ];
+
+        // console.log(...budgies);
+
+        const burrito = budgies[0].burrito;
+        // console.log((budgies[0].cheese) + (budgies[0].burrito));
+
+        const mapping = budgies.map((item) => item);
+        // console.log(...mapping);
+        // const including = mapping.includes('black beans');
+        // console.log(including);
+
+        const takeOut = [];
+        takeOut.push();
+        // console.log();
+
+        const iceCream = [
+            {'vanilla': 1.50},
+            {'chocolate': 2.50}, 
+            {'raspberry': .75}
+        ];
+
+        const loop = iceCream[0].vanilla;
+        // console.log(loop);
+
+        for(const item of iceCream){
+            // console.log(item);  
+            // console.log(takeOut.push(item));
+        }
+
+        console.log(...takeOut);
+
+        const vanillaIncludes = iceCream.includes('vanilla');
+        // console.log(vanillaIncludes);
+
+        const groceryStore = [
+            {
+                name: 'pineapple',
+                cost: 3.00,
+                amount: 10
+            }, 
+            {
+                name: 'apples',
+                cost: 1.50,
+                amount: 10
+            }, 
+            {
+                name: 'avocado',
+                cost: 4.50,
+                amount: 10
+            }
+        ]
+
+        const shoppingCart = [];
+
+        // const groceryStoreMap = groceryStore.map((item) => item);
+        // console.log(groceryStoreMap);
+
+        for(const item of groceryStore){
+            console.log(item);
+        }
+
+        const find = shoppingCart.includes();
+        console.log(find);
+        
+        // function addToCart(){
+        //     console.log("cart");
+        // }
+
+        addToCart = () => shoppingCart.push(groceryStore[0]);
+        cartTotal = () => shoppingCart.reduce((first, last)=> first + last);    
+
+        // shoppingCart.push(groceryStore[0]);
+        console.log(shoppingCart.length);
+        console.log(shoppingCart);
+        
+        
+
+
+    </script>
+</body>
+</html>
