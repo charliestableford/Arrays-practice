@@ -108,7 +108,9 @@
         addToCart = () => shoppingCart.push(groceryStore[0]);
         // updateCart = () => shoppingCart.map(item => item.length);
         valueUpdate = () => {
-
+            if(shoppingCart[0].name === groceryStore[0].name){
+                console.log("match");
+            }
         };
 
         cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
