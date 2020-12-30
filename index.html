@@ -109,7 +109,8 @@
         // updateCart = () => shoppingCart.map(item => item.length);
         valueUpdate = () => {
             if(shoppingCart[0].name === groceryStore[0].name){
-                console.log("match");
+                let updatedCart = groceryStore[0].amount-1;
+                console.log(updatedCart);
             }
         };
 
