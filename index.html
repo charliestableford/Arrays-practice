@@ -106,7 +106,13 @@
         // }
 
         addToCart = () => shoppingCart.push(groceryStore[0]);
-        updateCart = () => 
+        updateCart = () => shoppingCart.map(function(){
+            if(groceryStore.includes()){
+                console.log('ya found me');
+            }
+            
+        });
+
         cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
 
         // shoppingCart.push(groceryStore[0]);
