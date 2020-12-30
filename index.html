@@ -105,7 +105,7 @@
         // }
 
         addToCart = () => shoppingCart.push(groceryStore[0]);
-        cartTotal = () => shoppingCart.reduce((first, last)=> first + last);    
+        cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
 
         // shoppingCart.push(groceryStore[0]);
         console.log(shoppingCart.length);
