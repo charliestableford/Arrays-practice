@@ -106,7 +106,7 @@
         // }
 
         addToCart = () => shoppingCart.push(groceryStore[0]);
-        // updateCart = () => shoppingCart.map(item => item.length);
+        updateCart = () => shoppingCart.map((item) => item);
         valueUpdate = () => {
             if(shoppingCart[0].name === groceryStore[0].name){
                 let updatedCart = groceryStore[0].amount-1;
@@ -116,7 +116,7 @@
 
         cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
 
-        // shoppingCart.push(groceryStore[0]);
+        shoppingCart.push(groceryStore[0]);
         console.log(shoppingCart.length);
         console.log(shoppingCart);
         
