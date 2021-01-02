@@ -92,25 +92,12 @@
         ]
 
         const shoppingCart = [];
-        // const TwoForOne = 
 
-        // const groceryStoreMap = groceryStore.map((item) => item);
-        // console.log(groceryStoreMap);
-
-        for(const item of groceryStore){
-            console.log(item);
-        }
-
-        const find = shoppingCart.includes();
         console.log(find);
-        
-        // function addToCart(){
-        //     console.log("cart");
-        // }
 
         addToCart = () => shoppingCart.push(groceryStore[0]);
         updateCart = () => shoppingCart.map((item) => item);
-        subtractCart = () => 
+        subtractCart = () => shoppingCart.find(({id}) => id === 2);
 
         cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
 
