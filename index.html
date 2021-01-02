@@ -93,11 +93,9 @@
 
         const shoppingCart = [];
 
-        console.log(find);
-
-        addToCart = () => shoppingCart.push(groceryStore[0]);
-        updateCart = () => shoppingCart.map((item) => item);
-        subtractCart = () => shoppingCart.find(({id}) => id === 2);
+        const addToCart = () => shoppingCart.push(groceryStore[1]);
+        const updateCart = () => shoppingCart.map((item) => item);
+        const subtractCart = () => shoppingCart.find(({id}) => id === 2);
 
         cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
 
