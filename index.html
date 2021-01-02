@@ -91,7 +91,7 @@
             }
         ];
 
-        const cart = [];
+        let cart = [];
 
         const addToCart = (id, name, cost, qty) => {
             let item = {
@@ -104,14 +104,21 @@
             return cart;
             };
 
-        const updateCart = () => cart.map((item) => item);
+        // const updateCart = () => cart.map((item) => item);
         const subtractCart = (id, name, cost, qty) => {
-
+            let item = {
+                id: id,
+                name: name,
+                cost: cost, 
+                qty: qty
+            }
+            const find = cart.findIndex(cart => cart.id === id);
+            find.qty--;
+            console.log(find);
         };
 
-        cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
-
-        console.log(cart);
+        const cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost}));   
+        const clearCart = () => cart = []; 
         
     </script>
 </body>
