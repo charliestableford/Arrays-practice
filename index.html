@@ -75,37 +75,40 @@
                 id: 1,
                 name: 'pineapple',
                 cost: 3.00,
-                amount: 10
+                qty: 10
             }, 
             {
                 id: 2,
                 name: 'apples',
                 cost: 1.50,
-                amount: 10
+                qty: 10
             }, 
             {
                 id: 3,
                 name: 'avocado',
                 cost: 4.50,
-                amount: 10
+                qty: 10
             }
         ]
 
+        // let item = {
+        //     id: id, 
+        //     name: name, 
+        //     cost: cost, 
+        //     qty: qty
+        // }
+
         const shoppingCart = [];
 
-        const addToCart = () => shoppingCart.push(groceryStore[1]);
+        const addToCart = () => shoppingCart.push(groceryStore[1].qty++);
         const updateCart = () => shoppingCart.map((item) => item);
-        const subtractCart = () => shoppingCart.find(({id}) => id === 2);
+        const subtractCart = () => delete shoppingCart;
 
         cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
 
-        shoppingCart.push(groceryStore[0]);
         console.log(shoppingCart.length);
         console.log(shoppingCart);
         
-        
-
-
     </script>
 </body>
 </html>
