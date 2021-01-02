@@ -119,6 +119,18 @@
 
         const cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost}));   
         const clearCart = () => cart = []; 
+        const discount = (discount) => {
+            // let item = {
+            //     id: id,
+            //     name: name,
+            //     cost: cost, 
+            //     qty: qty
+            // };
+            let variable = item.cost - (item.cost * discount);
+            item.cost = variable;
+
+            cart.push(item);
+        };
         
     </script>
 </body>
