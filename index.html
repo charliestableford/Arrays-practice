@@ -8,67 +8,67 @@
 <body>
     <div class="app"></div>
     <script>
-        const favouriteFood = ['burritos', 'coffee', 'ramen', 'pho', 'indian curry', 'thai curry'];
-        //sprea operator spreads array into elements.
-        // console.log(...favouriteFood);
-        const findFood = favouriteFood.includes('burritos');
-        // will return a true or false and is case sensitive
-        // console.log(findFood);
+        // const favouriteFood = ['burritos', 'coffee', 'ramen', 'pho', 'indian curry', 'thai curry'];
+        // //sprea operator spreads array into elements.
+        // // console.log(...favouriteFood);
+        // const findFood = favouriteFood.includes('burritos');
+        // // will return a true or false and is case sensitive
+        // // console.log(findFood);
 
-        //replaces conventional for loop and allows you to modify one item
-        for(const item of favouriteFood){
-            // console.log(item);
-        }
+        // //replaces conventional for loop and allows you to modify one item
+        // for(const item of favouriteFood){
+        //     // console.log(item);
+        // }
 
-        const mappedFood = favouriteFood.map((item) => item);
-        // console.log(mappedFood);
+        // const mappedFood = favouriteFood.map((item) => item);
+        // // console.log(mappedFood);
 
-        const expenses = [20, 34, 56, 10, 12];
-        const total = expenses.reduce((first, last)=> first + last);
-        // console.log(total);
+        // const expenses = [20, 34, 56, 10, 12];
+        // const total = expenses.reduce((first, last)=> first + last);
+        // // console.log(total);
 
-        const budgies = [
-            {
-            'cheese': .50, 
-            'burrito': 12.00, 
-            'cabbage': 1.00, 
-            'sour cream': 3.00, 
-            'black beans': 2.00
-            }, 
-        ];
+        // const budgies = [
+        //     {
+        //     'cheese': .50, 
+        //     'burrito': 12.00, 
+        //     'cabbage': 1.00, 
+        //     'sour cream': 3.00, 
+        //     'black beans': 2.00
+        //     }, 
+        // ];
 
-        // console.log(...budgies);
+        // // console.log(...budgies);
 
-        const burrito = budgies[0].burrito;
-        // console.log((budgies[0].cheese) + (budgies[0].burrito));
+        // const burrito = budgies[0].burrito;
+        // // console.log((budgies[0].cheese) + (budgies[0].burrito));
 
-        const mapping = budgies.map((item) => item);
-        // console.log(...mapping);
-        // const including = mapping.includes('black beans');
-        // console.log(including);
+        // const mapping = budgies.map((item) => item);
+        // // console.log(...mapping);
+        // // const including = mapping.includes('black beans');
+        // // console.log(including);
 
-        const takeOut = [];
-        takeOut.push();
-        // console.log();
+        // const takeOut = [];
+        // takeOut.push();
+        // // console.log();
 
-        const iceCream = [
-            {'vanilla': 1.50},
-            {'chocolate': 2.50}, 
-            {'raspberry': .75}
-        ];
+        // const iceCream = [
+        //     {'vanilla': 1.50},
+        //     {'chocolate': 2.50}, 
+        //     {'raspberry': .75}
+        // ];
 
-        const loop = iceCream[0].vanilla;
-        // console.log(loop);
+        // const loop = iceCream[0].vanilla;
+        // // console.log(loop);
 
-        for(const item of iceCream){
-            // console.log(item);  
-            // console.log(takeOut.push(item));
-        }
+        // for(const item of iceCream){
+        //     // console.log(item);  
+        //     // console.log(takeOut.push(item));
+        // }
 
-        console.log(...takeOut);
+        // console.log(...takeOut);
 
-        const vanillaIncludes = iceCream.includes('vanilla');
-        // console.log(vanillaIncludes);
+        // const vanillaIncludes = iceCream.includes('vanilla');
+        // // console.log(vanillaIncludes);
 
         const groceryStore = [
             {
@@ -89,25 +89,29 @@
                 cost: 4.50,
                 qty: 10
             }
-        ]
+        ];
 
-        // let item = {
-        //     id: id, 
-        //     name: name, 
-        //     cost: cost, 
-        //     qty: qty
-        // }
+        const cart = [];
 
-        const shoppingCart = [];
+        const addToCart = (id, name, cost, qty) => {
+            let item = {
+                id: id,
+                name: name,
+                cost: cost, 
+                qty: qty
+            }
+            cart.push(item);
+            return cart;
+            };
 
-        const addToCart = () => shoppingCart.push(groceryStore[1].qty++);
-        const updateCart = () => shoppingCart.map((item) => item);
-        const subtractCart = () => delete shoppingCart;
+        const updateCart = () => cart.map((item) => item);
+        const subtractCart = (id, name, cost, qty) => {
 
-        cartTotal = () => shoppingCart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
+        };
 
-        console.log(shoppingCart.length);
-        console.log(shoppingCart);
+        cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost}));    
+
+        console.log(cart);
         
     </script>
 </body>
