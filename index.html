@@ -101,6 +101,8 @@
                 qty: qty
             }
             cart.push(item);
+            let outOfStock = (cart.qty === groceryStore.qty) ? "Out of Stock" : "In Stock";
+            console.log(outOfStock); 
             return cart;
             };
 
@@ -112,24 +114,32 @@
                 cost: cost, 
                 qty: qty
             }
-            const find = cart.findIndex(cart => cart.id === id);
-            find.qty--;
-            console.log(find);
+            console.log(cart.findIndex(x=> x.id === id));
+            item.qty--;
         };
 
-        const cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost}));   
+        const cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost})); 
         const clearCart = () => cart = []; 
-        const discount = (discount) => {
-            // let item = {
-            //     id: id,
-            //     name: name,
-            //     cost: cost, 
-            //     qty: qty
-            // };
+        const discountItem = (id, name, cost, qty, discount) => {
+            let item = {
+                id: id,
+                name: name,
+                cost: cost, 
+                qty: qty
+            };
             let variable = item.cost - (item.cost * discount);
-            item.cost = variable;
-
             cart.push(item);
+        };
+
+        const twoForOne = () => {
+
+        };
+
+        const discountCart = (discount, cartTotal) => {
+            // console.log(cartTotal);
+            let newTotal = cartTotal - (cartTotal * discount);
+            return newTotal;
+            console.log(newTotal);
         };
         
     </script>
