@@ -118,7 +118,22 @@
             item.qty--;
         };
 
+        // for each item in the cart
+        // loop over it
+        // accumilate the current total as a variable called 'a'
+        // add b.cost to that total
+        
         const cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost})); 
+        // this could be accomplistd with 
+
+        const cartTotal = ()=> {
+            let total = 0;
+
+            cart.map(cartItem=> (total - total + cartItem.cost));
+            return {cost: total}
+        }
+
+
         const clearCart = () => cart = []; 
         const discountItem = (id, name, cost, qty, discount) => {
             let item = {
@@ -145,3 +160,16 @@
     </script>
 </body>
 </html>
+
+<!--
+    feedback: 
+    - likes that strucutes data first. 
+    - prices are in whole numbers. 
+    - price - as cents as opposed to dollar and cents. 
+    - like that the add and subtract functions are separate. 
+    - an alternative is a redicer - that would allow you to scale even more options as you go. 
+
+    - cartTotal doesn't need a reducer. You could use map 
+    - reducer is the most powerful funciton in js - 
+
+-->
