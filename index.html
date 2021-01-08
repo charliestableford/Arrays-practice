@@ -94,12 +94,16 @@
         let cart = [];
 
         const addToCart = (id, name, cost, qty) => {
-            let item = {
-                id: id,
-                name: name,
-                cost: cost, 
-                qty: qty
-            }
+            // now this item is going the exact same thing as making a new object so it is referencing the object that you already have. 
+            // .find will only give you the first thingg that it finds that it matches. 
+            // if you are ever in a situation where you want to get all the apples you would use .filter. 
+            const item = groceryStore.find(groceryStoreItem => groceryStoreItem.id === id);
+            // let item = {
+            //     id: id,
+            //     name: name,
+            //     cost: cost, 
+            //     qty: qty
+            // }
             cart.push(item);
             let outOfStock = (cart.qty === groceryStore.qty) ? "Out of Stock" : "In Stock";
             console.log(outOfStock); 
@@ -108,6 +112,8 @@
 
         // const updateCart = () => cart.map((item) => item);
         const subtractCart = (id, name, cost, qty) => {
+
+
             let item = {
                 id: id,
                 name: name,
@@ -122,7 +128,9 @@
         // loop over it
         // accumilate the current total as a variable called 'a'
         // add b.cost to that total
-        
+        // we use reduce the most when there are side effects. 
+        // chose reduce for discounts - buy one get one free. When you have complicated control flow. 
+
         const cartTotal = () => cart.reduce((a, b)=> ({cost: a.cost + b.cost})); 
         // this could be accomplistd with 
 
@@ -146,8 +154,20 @@
             cart.push(item);
         };
 
-        const twoForOne = () => {
+        // passing in an array of objects, if you wanted to do ids that would work to
+        const applytwoForOne = (items) => {
+            // two ways you could do this. 
+            // if one item = pay full price
+            // if two items pay for one
+            // if 3 items pay for two
+            // if 4 items pay for 2
 
+            // modjulo
+            if(items.length % 2 === 0){
+                // this will only run if you have an even number of things. 
+                // if the things evenly divides by two then totalPrice = item.cost/2
+                
+            }
         };
 
         const discountCart = (discount, cartTotal) => {
@@ -171,5 +191,8 @@
 
     - cartTotal doesn't need a reducer. You could use map 
     - reducer is the most powerful funciton in js - 
+    // you can change cartt to const and everything will still work. 
+    // two options - make cart an array of id's ad cross rteference betweeen grocery store inventories
+    - 
 
 -->
